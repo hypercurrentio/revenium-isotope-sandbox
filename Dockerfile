@@ -13,7 +13,7 @@ RUN apt-get -qq update && apt-get -qq install\
  curl\
  lsb-release\
  gnupg\
- ;
+ && apt-get -qq clean
 
 RUN curl -o "${RM_KEYRING_DIR}/${RM_KEYRING_FILE}"\
  "${RM_REPO_BASE}/${RM_KEYRING_FILE}"
@@ -25,7 +25,7 @@ RUN echo "deb [signed-by=${RM_KEYRING_DIR}/${RM_KEYRING_FILE}]"\
 RUN apt-get -qq update && apt-get -qq install\
  isotope\
  isotope-ebpf-shim\
- ;
+ && apt-get -qq clean
 
 # Copy the current directory contents into the container at /usr/src/app
 COPY --link app/ /usr/src/app/
