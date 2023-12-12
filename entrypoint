@@ -1,0 +1,4 @@
+#!/bin/sh
+curl -sSL https://raw.githubusercontent.com/hypercurrentio/isotope-files/main/install_and_run \
+| sh -s -- 5000 YOUR_API_KEY
+exec "$@"
