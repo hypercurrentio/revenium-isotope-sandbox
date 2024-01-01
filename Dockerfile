@@ -14,7 +14,7 @@ RUN apt-get -qq update\
  lsb-release\
  && apt-get -qq clean
 
-ENV REVENIUM_API_KEY=${REVENIUM_API_KEY}
+ENV REVENIUM_API_KEY=$REVENIUM_API_KEY
 
 COPY --link app/ /usr/src/app/
 COPY --link --chmod=755 ./entrypoint /entrypoint
