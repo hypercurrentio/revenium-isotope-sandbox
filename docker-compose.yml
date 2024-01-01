@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  rest_api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - REVENIUM_API_KEY=${REVENIUM_API_KEY}
+    ports:
+      - "7080:5000"
+    environment:
+      - NAME=EchoAPI
+
+  load_generator:
+    image: locustio/locust
+    ports:
+      - "8089:8089"
+    volumes:
+      - ./locustfile.py:/mnt/locust/locustfile.py
+    command: -f /mnt/locust/locustfile.py -u 10 -r 5 -H http://rest_api:5000
+
+networks:
+  default:
+    driver: bridge

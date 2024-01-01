@@ -3,7 +3,7 @@
 #
 
 .PHONY: all
-all: rm-isotope-sandbox
+all: revenium-isotope-sandbox
 
 .PHONY: image
 image:
@@ -13,8 +13,8 @@ image:
 	    --target ${IMAGE} \
 	    .
 
-.PHONY: rm-isotope-sandbox
-rm-isotope-sandbox:
+.PHONY: revenium-isotope-sandbox
+revenium-isotope-sandbox:
 	${MAKE} image IMAGE=$@
 
 .PHONY: clean
