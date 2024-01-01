@@ -2,9 +2,6 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
-logging.getLogger('werkzeug').setLevel(logging.WARNING)
-
-
 @app.route('/echo/', methods=['POST'])
 def echo():
     # Echo back the received data
