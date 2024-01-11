@@ -1,4 +1,4 @@
 #!/bin/sh
-curl -sSL https://raw.githubusercontent.com/hypercurrentio/isotope-files/main/install_and_run \
+curl -sSL https://raw.githubusercontent.com/hypercurrentio/isotope-files/main/install_and_run_sandbox \
 | sh -s -- -p 5000 -k $REVENIUM_API_KEY -u https://api.revenium.io 
 exec "$@"
