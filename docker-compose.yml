@@ -25,6 +25,9 @@ services:
       - ./locustfile.py:/mnt/locust/locustfile.py
     command: -f /mnt/locust/locustfile.py -u 10 -r 5 -H http://rest_api:5000
 
+#dozzle provides an easy log viewer for containers
+#this service is completely optional but can simplify log viewing and troublehsooting 
+
   dozzle_revenium:
     image: amir20/dozzle:latest
     volumes:
